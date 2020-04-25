@@ -28,7 +28,7 @@ RUN echo 'echo; echo mem: 32768' \
     && chmod +x /usr/local/bin/free
 RUN echo mem: $(free -m | awk 'NR == 2 { print $2; }')
 
-RUN yum install -y iputils iproute sudo
+RUN yum install -y iputils iproute sudo unixODBC
 RUN yum install -y \
     ./tableau-tabcmd.rpm \
     ./tableau-server.rpm \
