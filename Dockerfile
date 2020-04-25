@@ -1,4 +1,4 @@
-#!/usr/bin/env -S docker build --compress -t wrenchpilot/tableau:2020.1.2:build -f
+#!/usr/bin/env -S docker build --compress -t wrenchpilot/tableau:2020.1.2 -f
 
 FROM centos/systemd
 
