@@ -63,7 +63,7 @@ RUN ( \
 RUN echo "${USER}:${USER}" | chpasswd
 RUN systemctl enable rc-local || chmod +x /etc/rc.d/rc.local
 
-RUN tabcmd initialuser --server http://localhost --username "tableau" --password "tableau"
-RUN tsm maintenance metadata-services enable
+#RUN tabcmd initialuser --server http://localhost --username "tableau" --password "tableau"
+#RUN tsm maintenance metadata-services enable
 
 EXPOSE 80 443 8316 8381 8731 8749 8780 8850
