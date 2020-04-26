@@ -63,11 +63,7 @@ RUN ( \
 RUN echo "${USER}:${USER}" | chpasswd
 RUN systemctl enable rc-local || chmod +x /etc/rc.d/rc.local
 
+RUN tabcmd initialuser --server http://localhost --username "tableau" --password "tableau"
+RUN tsm maintenance metadata-services enable
+
 EXPOSE 80 443 8316 8381 8731 8749 8780 8850
-
-# example: 
-
-#sudo docker run --rm --privileged -it -p8850:8850 -p80:80 \
-#-v /sys/fs/cgroup:/sys/fs/cgroup:ro \
-#-v /opt/tableau/tableau_driver:/opt/tableau/tableau_driver \
-#wrenchpilot/tableau
